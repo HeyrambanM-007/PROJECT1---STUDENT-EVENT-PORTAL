@@ -1,41 +1,41 @@
-# Novus CV 🚀
+# Novus Eventra
 
-Novus CV is a modern, high-performance **Single Page Application (SPA)** engineered to help developers and technical professionals build, style, and structurally optimize their resumes for Applicant Tracking Systems (ATS) in real-time. 
+A vibrant, interactive, and responsive web application designed for campus event management. This portal allows administrators to create events with capacity limits, while students can browse upcoming activities, check slot availability, and register in real-time.
 
-Built with pure client-side vanilla web technologies, the application features an instant two-way data-binding engine, real-time visual theme customization, layout paradigm switching, and an integrated algorithmic ATS evaluation matrix.
+## 🚀 Features
 
----
+*   **Dynamic Event Management**: Admins can add events with titles, descriptions, locations, dates, and strict capacity (slot) limits.
+*   **Real-time Availability**: The registration system automatically tracks capacity, showing real-time slot availability and disabling registration for full events.
+*   **Interactive Calendar**: A visual calendar interface allows users to browse events by date.
+*   **Analytics Dashboard**: Visual representation of registration data, including a department-wise breakdown via a dynamic pie chart.
+*   **Theme Customization**: Built-in toggle to switch between high-contrast Dark Mode and clean Light Mode.
+*   **Data Export**: Admins can export all registration data to CSV format for easy record-keeping.
+*   **Responsive UI**: Modern glassmorphism design that adapts seamlessly to desktop and mobile devices.
 
-## 🌟 Key Features
+## 🛠️ Tech Stack
 
-### 1. Zero-Reload SPA Architecture
-* Seamlessly switch between **Home**, **Resume Builder**, and **ATS Checker** dashboards without state loss.
-* Built-in lifecycle routes automatically trigger the evaluation scanner the moment you click into the ATS matrix tab.
+*   **HTML5**: Semantic structure for all pages.
+*   **CSS3**: Vibrant styling with CSS variables, Flexbox, Grid, and Glassmorphism effects.
+*   **Vanilla JavaScript (ES6+)**: Handles state management, data persistence via `localStorage`, and dynamic UI rendering.
 
-### 2. Live Dynamic Resume Builder
-* **Reflexive Data Binding:** Input modifications immediately map to the live document canvas template.
-* **Smart Tag Generation:** Comma-separated inputs instantly transform into professional technological skill badges.
-* **Image Upload Pipeline:** Securely processes and draws custom profile picture uploads directly to the resume layout using the client-side `FileReader` API.
-* **AI Enhancer Mockups:** Built-in contextual rewrite pipelines demonstrate how to turn basic project logs into metrics-heavy, high-impact technical statements.
+## 📋 How to Use
 
-### 3. Visual & Aesthetic Flex Engine
-* **Instant Palettes:** Interactive color picker overrides global CSS variables dynamically across all document components.
-* **Layout Paradigm Switching:** Swap instantly between **Modern Minimalist**, **Classic Professional (Georgia Serif)**, and **Two-Column Split** architectures while preserving your data text perfectly.
+1.  **Home Page**: View all upcoming events sorted by date. Check slot availability before registering.
+2.  **Events & Calendar**: Browse the full event calendar. Click on specific days to see event details.
+3.  **Registration**: Fill out the form to secure your spot. Note that the system automatically prevents over-booking.
+4.  **Admin Panel**: 
+    *   **Create Event**: Set up a new event including its capacity.
+    *   **Manage Data**: View all registrations, export to CSV, or clear all data.
+5.  **Analytics**: View total registration counts and department-wise distribution charts.
 
-### 4. Algorithmic ATS Checker
-* Automatically checks your content configuration for critical tracking variables: Identification completeness, professional repository footprints (GitHub/LinkedIn), action-oriented verb density, and key technical stack metrics.
-* Displays a live, dynamic SVG radial progress gauge alongside a granular warning, success, and error diagnostic log checklist.
+## 📂 Project Structure
 
-### 5. Seamless PDF Packaging
-* Leverages `html2pdf.js` to compile, map, and export the document element layout canvas directly to a high-fidelity, high-density printable vector PDF sheet (`letter` format).
+*   `index.html`: The central entry point containing the structure for all application views.
+*   `style.css`: Contains the theme variables, glassmorphism card styles, and layout grids.
+*   `script.js`: Contains all the application logic, including `localStorage` operations, form submission handling, and chart generation.
 
----
+## 💡 Persistence
+This project uses the browser's `localStorage` to persist data between sessions. Your events and registration data will remain available as long as you use the same browser.
 
-## 📂 Project Architecture
-
-The suite operates entirely on a decoupled separation-of-concerns layout inside a lightweight flat folder footprint:
-
-```text
-├── index.html      # Structural HTML5 layouts, SPA viewport containers, and navigation schemas
-├── style.css       # Core typography, utility tokens, layout structures (CSS Grid/Flexbox), and template paradigms
-└── script.js       # Dynamic routing controller, two-way reactive state engine, and ATS optimization matrices# PROJECT1---STUDENT-EVENT-PORTAL
+## 👤 Author
+Developed as a high-performance student portal to simplify campus activity engagement.
