@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🪩 Novus Eventra Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Novus Eventra</div>
+        <ul class="nav-links">
+            <li><a href="#" onclick="showPage('home')">Home</a></li>
+            <li><a href="#" onclick="showPage('events')">Event Calendar</a></li>
+            <li><a href="#" onclick="showPage('register')">Register</a></li>
+            <li><a href="#" onclick="showPage('analytics')">Analytics</a></li>
+            <li><a href="#" onclick="showPage('admin')">Admin</a></li>
+            <li><button id="theme-toggle" class="btn-theme">☀️ / 🌙</button></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="page active">
+        <div class="hero">
+            <h1>Welcome to the Novus Event Portal.</h1>
+            <p>Discover exciting student activities, join upcoming events, and register in just a few clicks.</p>
+            <div class="hero-buttons">
+                <button class="btn primary" onclick="showPage('register')">Register Now</button>
+                <button class="btn secondary" onclick="showPage('events')">View Calendar</button>
+            </div>
+        </div>
+        <div class="features">
+            <div class="card glass-card stat-box">
+                <h3 id="stat-event-count" class="stat-number">0</h3>
+                <p>Active Events</p>
+            </div>
+            <div class="card glass-card stat-box">
+                <h3 id="stat-reg-count" class="stat-number">0</h3>
+                <p>Total Registrations</p>
+            </div>
+            <div class="card glass-card stat-box">
+                <h3 class="stat-number">⚡</h3>
+                <p>1-Click Registration</p>
+            </div>
+        </div>
+        <h2 class="mt-2">Upcoming Event Details</h2>
+        <div class="events-grid" id="events-container">
+            </div>
+    </section>
+     
+    
+
+    <section id="events" class="page">
+        <h2>Event Calendar</h2>
+        
+        <div class="calendar-container glass-card mt-1">
+            <div class="calendar-header">
+                <button class="btn secondary" onclick="changeMonth(-1)">&#8592; Prev</button>
+                <h3 id="month-year-display">Month Year</h3>
+                <button class="btn secondary" onclick="changeMonth(1)">Next &#8594;</button>
+            </div>
+            <div class="calendar-grid">
+                <div class="day-name">Sun</div><div class="day-name">Mon</div><div class="day-name">Tue</div>
+                <div class="day-name">Wed</div><div class="day-name">Thu</div><div class="day-name">Fri</div><div class="day-name">Sat</div>
+            </div>
+            <div class="calendar-grid" id="calendar-days">
+                </div>
+        </div>
+
+        
+    </section>
+
+    <section id="register" class="page">
+        <h2>Event Registration</h2>
+        <div class="form-container glass-card">
+            <form id="registration-form">
+                <div class="input-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" required placeholder="Enter your name">
+                </div>
+                <div class="input-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" required placeholder="Enter your email">
+                </div>
+                <div class="input-group">
+                    <label for="dept">Department</label>
+                    <select id="dept" required>
+                        <option value="">Select Department</option>
+                        <option value="Computer Science">Computer Science</option>
+                        <option value="Information Technology">Information Technology</option>
+                        <option value="Electronics">Electronics</option>
+                        <option value="Mechanical">Mechanical</option>
+                        <option value="Arts & Science">Arts & Science</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="event">Select Event</label>
+                    <select id="event" required>
+                        </select>
+                </div>
+                <button type="submit" class="btn primary full-width">Submit Registration</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="analytics" class="page">
+        <h2>Data & Analytics</h2>
+        <div class="analytics-grid">
+            <div class="card glass-card stat-box">
+                <h4>Total Registrations</h4>
+                <div class="stat-number" id="total-regs">0</div>
+            </div>
+            <div class="card glass-card stat-box">
+                <h4>Most Popular Event</h4>
+                <div class="stat-text" id="top-event">-</div>
+            </div>
+            <div class="card glass-card stat-box">
+                <h4>Top Department</h4>
+                <div class="stat-text" id="top-dept">-</div>
+            </div>
+        </div>
+        
+        <div class="chart-grid mt-2">
+            <div class="card glass-card">
+                <h3>Department Breakdown (Chart)</h3>
+                <div class="pie-chart-wrapper mt-2">
+                    <div id="dept-pie-chart" class="pie-chart"></div>
+                    <div id="pie-legend" class="pie-legend">
+                        </div>
+                </div>
+            </div>
+            <div class="card glass-card">
+                <h3>Department Breakdown (List)</h3>
+                <ul id="dept-breakdown-list" class="data-list mt-2"></ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="admin" class="page">
+        <h2>Event Administration</h2>
+        
+        <div class="admin-grid">
+            <div class="card glass-card">
+                <h3>Create New Event</h3>
+                <form id="create-event-form" class="mt-1">
+                    <div class="input-group">
+                        <label>Event Title</label>
+                        <input type="text" id="new-event-title" required placeholder="E.g., Hackathon 2026">
+                    </div>
+                    <div class="input-group">
+                        <label>Date</label>
+                        <input type="date" id="new-event-date" required>
+                    </div>
+                    <div class="input-group">
+    <label>Total Capacity (Slots)</label>
+    <input type="number" id="new-event-slots" min="1" required placeholder="E.g., 50">
+</div>
+                    <div class="input-group">
+                        <label>Location</label>
+                        <input type="text" id="new-event-location" required placeholder="E.g., Main Auditorium">
+                    </div>
+                    <div class="input-group">
+                        <label>Description</label>
+                        <input type="text" id="new-event-desc" required placeholder="Brief description...">
+                    </div>
+                    <button type="submit" class="btn primary full-width">Add Event</button>
+                </form>
+            </div>
+
+            <div class="card glass-card">
+                <h3>Manage Data</h3>
+                <div class="admin-controls mt-1">
+                    <button class="btn secondary" onclick="exportData()">Export CSV</button>
+                    <button class="btn danger" onclick="clearData()">Clear All Data</button>
+                </div>
+                <div class="table-container mt-1">
+                    <table id="registrations-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Department</th>
+                                <th>Event</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-body">
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
